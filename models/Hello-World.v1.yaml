@@ -1,0 +1,29 @@
+title: Hello World V1
+type: object
+properties:
+  message:
+    type: string
+  countries:
+    type:
+      - string
+      - array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        created:
+          type: string
+          format: date-time
+        is_peaceful:
+          type: boolean
+        gdp:
+          type: number
+x-examples:
+  Example:
+    message: Hello World v1
+    countries:
+      - name: Indonesia
+        created: '1945-08-17T03:00:00'
+        gdp: 1000
+        is_peaceful: true

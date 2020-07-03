@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: Hello World
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /hello_world:
+    get:
+      summary: Get Hello World
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Hello-World.v1.yaml
+              examples:
+                Success:
+                  value:
+                    message: Hello World
+                    countries:
+                      - name: Indonesia
+                        created: '1945-08-17T03:00:00'
+                        gdp: 1000
+                        is_peaceful: true
+      operationId: get-hello_world
+    post:
+      summary: POST Hello World
+      tags: []
+      operationId: post-hello_world
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                countries:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      created:
+                        type: string
+                      is_peaceful:
+                        type: boolean
+                      gdp:
+                        type: number
+            examples:
+              example-1: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ../models/Hello-World.v1.yaml
+              examples:
+                Success:
+                  value:
+                    message: Hello World
+                    countries:
+                      - name: Indonesia
+                        created: '1945-08-17T03:00:00'
+                        gdp: 1000
+                        is_peaceful: true
+components:
+  schemas: {}

@@ -1,0 +1,23 @@
+title: Hello World V2
+type: object
+x-examples:
+  Example:
+    country:
+      - name: Indonesia
+        created: 1593765050086
+        gdp: '1000'
+properties:
+  country:
+    type:
+      - string
+      - array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        created:
+          format: date-time
+          type: number
+        gdp:
+          type: string
